@@ -24,6 +24,7 @@
                                     <constraint firstAttribute="height" constant="460" id="GoL-kV-6fc"/>
                                     <constraint firstAttribute="width" constant="568" id="H3e-hz-62z"/>
                                 </constraints>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="GoL-kV-6fc"/>
