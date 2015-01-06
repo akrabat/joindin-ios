@@ -73,6 +73,7 @@
                     <navigationItem key="navigationItem" title="joind.in" id="XgB-z3-Wi5"/>
                     <connections>
                         <outlet property="eventTableView" destination="gLr-4M-4rt" id="L5s-L5-Zrp"/>
+                        <outlet property="eventTypeSegmentControl" destination="q51-Yx-xXr" id="Zu5-Y1-LQo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

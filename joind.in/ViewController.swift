@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var eventTableView: UITableView!
+    @IBOutlet weak var eventTypeSegmentControl: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
