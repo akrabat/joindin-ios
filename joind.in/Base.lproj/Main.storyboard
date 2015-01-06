@@ -15,7 +15,22 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="q51-Yx-xXr">
+                                <rect key="frame" x="0.0" y="64" width="600" height="29"/>
+                                <segments>
+                                    <segment title="Hot"/>
+                                    <segment title="Upcoming"/>
+                                    <segment title="Past"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q51-Yx-xXr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="AQH-Ly-1P8"/>
+                            <constraint firstAttribute="centerX" secondItem="q51-Yx-xXr" secondAttribute="centerX" id="CGn-vT-OWy"/>
+                            <constraint firstItem="q51-Yx-xXr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="icb-VM-uV1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="joind.in" id="XgB-z3-Wi5"/>
                 </viewController>
