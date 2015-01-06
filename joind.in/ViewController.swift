@@ -31,5 +31,20 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCellWithIdentifier("eventListCell") as UITableViewCell
     }
+    
+    // UISegmentedControl: eventTypeSegmentControl
+    
+    @IBAction func eventTypeSelected(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            println("Hot events")
+        case 1:
+            println("Upcoming events")
+        case 2:
+            println("Past events")
+        default:
+            println("Unknown segment index \(sender.selectedSegmentIndex)")
+        }
+    }
 }
 

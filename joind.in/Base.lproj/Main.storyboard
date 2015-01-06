@@ -56,6 +56,9 @@
                                     <segment title="Upcoming"/>
                                     <segment title="Past"/>
                                 </segments>
+                                <connections>
+                                    <action selector="eventTypeSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="Sgt-tJ-EDj"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
