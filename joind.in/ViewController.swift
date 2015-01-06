@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var eventTypeSegmentControl: UISegmentedControl!
+    
+    var currentEventType = EventType.HOT_EVENTS
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +43,21 @@ class ViewController: UIViewController, UITableViewDataSource {
     // UISegmentedControl: eventTypeSegmentControl
     
     @IBAction func eventTypeSelected(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            println("Hot events")
-        case 1:
-            println("Upcoming events")
-        case 2:
-            println("Past events")
+        let selectedIndex = sender.selectedSegmentIndex
+        
+        switch selectedIndex {
+        case EventType.HOT_EVENTS.rawValue:
+            currentEventType = EventType.HOT_EVENTS
+            eventTableView.reloadData()
+            
+        case EventType.UPCOMING_EVENTS.rawValue:
+            currentEventType = EventType.UPCOMING_EVENTS
+            eventTableView.reloadData()
+            
+        case EventType.PAST_EVENTS.rawValue:
+            currentEventType = EventType.PAST_EVENTS
+            eventTableView.reloadData()
+            
         default:
             println("Unknown segment index \(sender.selectedSegmentIndex)")
         }
