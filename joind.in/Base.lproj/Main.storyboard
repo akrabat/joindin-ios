@@ -26,14 +26,14 @@
                                 </constraints>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="eventListCell" rowHeight="44" id="1M7-dI-9Mg" customClass="EventListCell" customModule="joind_in" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="0.0" reuseIdentifier="eventListCell" rowHeight="44" id="1M7-dI-9Mg" customClass="EventListCell" customModule="joind_in" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1M7-dI-9Mg" id="Hc7-Rf-Vhj">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZV-OF-Sy5">
-                                                    <rect key="frame" x="52" y="11" width="500" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Event name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZV-OF-Sy5">
+                                                    <rect key="frame" x="52" y="0.0" width="500" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -45,24 +45,40 @@
                                                         <constraint firstAttribute="width" constant="44" id="ELm-PE-efG"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcP-7p-NVF">
+                                                    <rect key="frame" x="52" y="23" width="139" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="139" id="TcS-1l-aCJ"/>
+                                                        <constraint firstAttribute="height" constant="21" id="aec-02-mHX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.73634785353535359" green="0.73634785353535359" blue="0.73634785353535359" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gZV-OF-Sy5" secondAttribute="trailing" constant="8" id="Fq9-2K-UXs"/>
                                                 <constraint firstAttribute="centerY" secondItem="7Ok-kc-NiY" secondAttribute="centerY" id="RlI-Cp-BHu"/>
                                                 <constraint firstItem="gZV-OF-Sy5" firstAttribute="leading" secondItem="Hc7-Rf-Vhj" secondAttribute="leadingMargin" constant="-8" id="Xww-CO-s2M"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="RcP-7p-NVF" secondAttribute="bottom" constant="-8.5" id="ZkK-H8-0cZ"/>
                                                 <constraint firstItem="gZV-OF-Sy5" firstAttribute="top" secondItem="Hc7-Rf-Vhj" secondAttribute="topMargin" constant="3" id="atL-qM-bRT"/>
                                                 <constraint firstItem="gZV-OF-Sy5" firstAttribute="leading" secondItem="7Ok-kc-NiY" secondAttribute="trailing" constant="8" id="c2a-Ga-L7m"/>
+                                                <constraint firstItem="gZV-OF-Sy5" firstAttribute="top" secondItem="Hc7-Rf-Vhj" secondAttribute="topMargin" constant="-8" id="d7h-C2-maB"/>
                                                 <constraint firstItem="7Ok-kc-NiY" firstAttribute="leading" secondItem="Hc7-Rf-Vhj" secondAttribute="leadingMargin" constant="-8" id="grx-nl-nyt"/>
+                                                <constraint firstItem="RcP-7p-NVF" firstAttribute="leading" secondItem="7Ok-kc-NiY" secondAttribute="trailing" constant="8" id="k4O-U0-DXH"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="gZV-OF-Sy5" secondAttribute="bottom" constant="4" id="np3-Ec-mAC"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="Xww-CO-s2M"/>
+                                                    <exclude reference="atL-qM-bRT"/>
+                                                    <exclude reference="np3-Ec-mAC"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="eventDateLabel" destination="RcP-7p-NVF" id="OO9-Z6-jex"/>
                                             <outlet property="eventImageView" destination="7Ok-kc-NiY" id="GzP-7r-JX9"/>
                                             <outlet property="eventNameLabel" destination="gZV-OF-Sy5" id="i6q-jY-FU5"/>
                                         </connections>

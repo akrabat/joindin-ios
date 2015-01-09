@@ -34,6 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         var tableCell = tableView.dequeueReusableCellWithIdentifier("eventListCell") as EventListCell
         tableCell.eventNameLabel.text = "Event name here"
+        tableCell.eventDateLabel.text = "Event date here"
         tableCell.eventImageView.image = UIImage(named: "event_icon_none.gif")
         tableCell.layoutMargins = UIEdgeInsetsZero;
         tableCell.preservesSuperviewLayoutMargins = false;
