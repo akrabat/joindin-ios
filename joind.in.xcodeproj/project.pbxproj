@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B39ECA51A606EEA004953C3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B39ECA41A606EEA004953C3 /* SwiftyJSON.swift */; };
+		9B39ECA71A6072B7004953C3 /* JoindInEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B39ECA61A6072B7004953C3 /* JoindInEvent.swift */; };
 		9B89FFC61A5C477B00F6E95C /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89FFC51A5C477B00F6E95C /* EventListCell.swift */; };
 		9B89FFC81A5C4D1400F6E95C /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89FFC71A5C4D1400F6E95C /* EventType.swift */; };
 		9BA230081A5FAC4800F304BA /* event_icon_none.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9BA230071A5FAC4800F304BA /* event_icon_none.gif */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		9B39ECA41A606EEA004953C3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		9B39ECA61A6072B7004953C3 /* JoindInEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoindInEvent.swift; sourceTree = "<group>"; };
 		9B89FFC51A5C477B00F6E95C /* EventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
 		9B89FFC71A5C4D1400F6E95C /* EventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
 		9BA230071A5FAC4800F304BA /* event_icon_none.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = event_icon_none.gif; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B39ECA81A6072C4004953C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9B39ECA61A6072B7004953C3 /* JoindInEvent.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		9BCBF3FA1A56FB38001602CD = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 		9BCBF4051A56FB38001602CD /* joind.in */ = {
 			isa = PBXGroup;
 			children = (
+				9B39ECA81A6072C4004953C3 /* Models */,
 				9BCBF4081A56FB38001602CD /* AppDelegate.swift */,
 				9BCBF40D1A56FB38001602CD /* ViewController.swift */,
 				9BCBF40F1A56FB38001602CD /* Main.storyboard */,
@@ -235,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BA2300A1A5FB09B00F304BA /* EventDetailViewController.swift in Sources */,
+				9B39ECA71A6072B7004953C3 /* JoindInEvent.swift in Sources */,
 				9B89FFC61A5C477B00F6E95C /* EventListCell.swift in Sources */,
 				9B89FFC81A5C4D1400F6E95C /* EventType.swift in Sources */,
 				9B39ECA51A606EEA004953C3 /* SwiftyJSON.swift in Sources */,
