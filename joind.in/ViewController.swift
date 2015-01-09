@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var eventTypeSegmentControl: UISegmentedControl!
@@ -24,6 +24,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showEventDetail" {
+            // TODO Tell sender which event we're showing
+        }
+    }
 
     // UITableViewDataSource methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +37,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         var tableCell = tableView.dequeueReusableCellWithIdentifier("eventListCell") as EventListCell
         tableCell.eventNameLabel.text = "Event name here"
         tableCell.eventDateLabel.text = "Event date here"
