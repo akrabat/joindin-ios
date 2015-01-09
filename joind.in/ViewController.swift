@@ -29,12 +29,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var tableCell = tableView.dequeueReusableCellWithIdentifier("eventListCell") as EventListCell
         tableCell.eventNameLabel.text = "Event name here"
+        tableCell.eventImageView.image = UIImage(named: "event_icon_none.gif")
         tableCell.layoutMargins = UIEdgeInsetsZero;
         tableCell.preservesSuperviewLayoutMargins = false;
         return tableCell

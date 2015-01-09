@@ -11,6 +11,7 @@ import UIKit
 class EventListCell: UITableViewCell {
 
     @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var eventImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
