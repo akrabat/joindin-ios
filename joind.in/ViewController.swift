@@ -15,9 +15,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var currentEventType = EventType.HOT_EVENTS
 
+    var events:[JoindInEvent] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        updateEvents()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,18 +35,47 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-    // UITableViewDataSource methods
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    func updateEvents() {
+        var ji = JoindInAPI()
+        ji.getEvents(currentEventType, responseHandler: {(error: NSError?, result: Array<JoindInEvent>) in
+            if error != nil {
+                println(error)
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.events = result
+                self.eventTableView.reloadData()
+                println(result.count)
+            });
+        })
     }
 
+    // UITableViewDataSource methods
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.events.count
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var tableCell = tableView.dequeueReusableCellWithIdentifier("eventListCell") as EventListCell
-        tableCell.eventNameLabel.text = "Event name here"
-        tableCell.eventDateLabel.text = "Event date here"
-        tableCell.eventImageView.image = UIImage(named: "event_icon_none.gif")
+
+        let thisEvent:JoindInEvent = self.events[indexPath.row]
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "d MMM yy"
+
+        // Populate the table cell with the event's basic information
+        tableCell.eventNameLabel.text = thisEvent.eventName
+        let dateStr = (thisEvent.startDate != nil ? dateFormatter.stringFromDate(thisEvent.startDate!) : "")
+        println(dateStr)
+        tableCell.eventDateLabel.text = dateStr
+        if let iconStr = thisEvent.icon {
+            // We've got an icon, load the image data
+            tableCell.eventImageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: "https://joind.in/inc/img/event_icons/\(iconStr)")!, options: nil, error: nil)!)
+        } else {
+            // No icon data supplied, use a default
+            tableCell.eventImageView.image = UIImage(named: "event_icon_none.gif")
+        }
         tableCell.layoutMargins = UIEdgeInsetsZero;
         tableCell.preservesSuperviewLayoutMargins = false;
+
         return tableCell
     }
     
@@ -54,16 +87,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         switch selectedIndex {
         case EventType.HOT_EVENTS.rawValue:
             currentEventType = EventType.HOT_EVENTS
-            eventTableView.reloadData()
-            
+            updateEvents()
+
         case EventType.UPCOMING_EVENTS.rawValue:
             currentEventType = EventType.UPCOMING_EVENTS
-            eventTableView.reloadData()
-            
+            updateEvents()
+
         case EventType.PAST_EVENTS.rawValue:
             currentEventType = EventType.PAST_EVENTS
-            eventTableView.reloadData()
-            
+            updateEvents()
+
         default:
             println("Unknown segment index \(sender.selectedSegmentIndex)")
         }
