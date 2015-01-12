@@ -10,10 +10,17 @@ import UIKit
 
 class EventDetailViewController: UIViewController {
 
+    var event:JoindInEvent? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if event == nil {
+            // Can't continue, we need an event
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+
+        title = event?.eventName
     }
 
     override func didReceiveMemoryWarning() {

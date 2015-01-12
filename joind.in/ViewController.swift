@@ -31,7 +31,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showEventDetail" {
-            // TODO Tell sender which event we're showing
+            let selectedCell = sender as UITableViewCell
+            let eventDetailVC = segue.destinationViewController as EventDetailViewController
+            let indexPath = eventTableView.indexPathForCell(selectedCell)!
+            eventDetailVC.event = events[indexPath.row]
         }
     }
 
@@ -44,7 +47,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             dispatch_async(dispatch_get_main_queue(), {
                 self.events = result
                 self.eventTableView.reloadData()
-                println(result.count)
             });
         })
     }
