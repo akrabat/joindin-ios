@@ -12,7 +12,9 @@ class JoindInAPI {
     
     let METHOD_POST:String = "POST"
     let METHOD_DELETE:String = "DELETE"
-    
+
+    let API_URL:String = "https://api.joind.in/v2.1"
+
     enum Status:Int {
         case OK = 0
         case ERROR = 1
@@ -32,7 +34,7 @@ class JoindInAPI {
         default:
             filter = "upcoming"
         }
-        getJSONFullURI("https://api.joind.in/v2.1/events?filter=\(filter)", responseHandler: {(error: NSError?, result: JSON?) in
+        getJSONFullURI("\(API_URL)/events?filter=\(filter)", responseHandler: {(error: NSError?, result: JSON?) in
             var arr:[JoindInEvent] = []
 
             if error != nil {
