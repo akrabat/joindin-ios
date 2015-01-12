@@ -66,11 +66,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Populate the table cell with the event's basic information
         tableCell.eventNameLabel.text = thisEvent.eventName
         let dateStr = (thisEvent.startDate != nil ? dateFormatter.stringFromDate(thisEvent.startDate!) : "")
-        println(dateStr)
         tableCell.eventDateLabel.text = dateStr
         if let iconStr = thisEvent.icon {
             // We've got an icon, load the image data
-            tableCell.eventImageView.image = UIImage(data: NSData(contentsOfURL: NSURL(string: "https://joind.in/inc/img/event_icons/\(iconStr)")!, options: nil, error: nil)!)
+            let strURL = NSData(contentsOfURL: NSURL(string: "https://joind.in/inc/img/event_icons/\(iconStr)")!, options: nil, error: nil)
+            if strURL != nil {
+                tableCell.eventImageView.image = UIImage(data: strURL!)
+            } else {
+                tableCell.eventImageView.image = UIImage(named: "event_icon_none.gif")
+            }
         } else {
             // No icon data supplied, use a default
             tableCell.eventImageView.image = UIImage(named: "event_icon_none.gif")

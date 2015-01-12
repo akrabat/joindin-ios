@@ -62,7 +62,7 @@ class JoindInAPI {
                 event.href = eventJSON["href"].string
                 event.tzContinent = eventJSON["tz_continent"].string!
                 event.tzPlace = eventJSON["tz_place"].string!
-                event.icon = eventJSON["icon"].string
+                event.icon = eventJSON["icon"].string!
 
                 arr.append(event)
             }
