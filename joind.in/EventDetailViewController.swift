@@ -2,7 +2,7 @@
 //  EventDetailViewController.swift
 //  joind.in
 //
-//  Created by Rich Sage on 09/01/2015.
+//  Created by Rich Sage on 12/01/2015.
 //  Copyright (c) 2015 joind.in. All rights reserved.
 //
 
@@ -10,21 +10,26 @@ import UIKit
 
 class EventDetailViewController: UIViewController {
 
-    var event:JoindInEvent? = nil
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if event == nil {
-            // Can't continue, we need an event
-            self.navigationController?.popViewControllerAnimated(true)
-        }
-
-        title = event?.eventName
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

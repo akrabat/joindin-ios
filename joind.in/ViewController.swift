@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showEventDetail" {
             let selectedCell = sender as UITableViewCell
-            let eventDetailVC = segue.destinationViewController as EventDetailViewController
+            let eventDetailVC = segue.destinationViewController as EventDetailViewTabBarController
             let indexPath = eventTableView.indexPathForCell(selectedCell)!
             eventDetailVC.event = events[indexPath.row]
         }

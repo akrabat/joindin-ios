@@ -82,7 +82,7 @@
                                             <outlet property="eventDateLabel" destination="RcP-7p-NVF" id="OO9-Z6-jex"/>
                                             <outlet property="eventImageView" destination="7Ok-kc-NiY" id="GzP-7r-JX9"/>
                                             <outlet property="eventNameLabel" destination="gZV-OF-Sy5" id="i6q-jY-FU5"/>
-                                            <segue destination="wQ8-hJ-Pb0" kind="show" identifier="showEventDetail" id="WPw-Jd-7mp"/>
+                                            <segue destination="L8B-BG-DYZ" kind="show" identifier="showEventDetail" id="VAS-ss-PPh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -131,23 +131,82 @@
             </objects>
             <point key="canvasLocation" x="1257" y="447"/>
         </scene>
-        <!--Event detail-->
-        <scene sceneID="z5b-mz-MNS">
+        <!--Talks-->
+        <scene sceneID="2Kk-Mg-qcX">
             <objects>
-                <viewController title="Event detail" id="wQ8-hJ-Pb0" customClass="EventDetailViewController" customModule="joind_in" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7hp-sm-i3Y" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yhv-0e-YuR"/>
-                        <viewControllerLayoutGuide type="bottom" id="G1e-2a-xlP"/>
+                        <viewControllerLayoutGuide type="top" id="nKw-Ov-XJF"/>
+                        <viewControllerLayoutGuide type="bottom" id="kg7-n1-idT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hdL-bq-DxJ">
+                    <view key="view" contentMode="scaleToFill" id="xgv-OI-Q0a">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Talks" id="MyC-lu-m54"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tAK-Ih-Bbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOg-n3-X0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254" y="1144"/>
+            <point key="canvasLocation" x="2077" y="1453"/>
+        </scene>
+        <!--Comments-->
+        <scene sceneID="Xnw-nR-Zl4">
+            <objects>
+                <viewController id="qq7-Y1-UhI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kA0-HV-vzO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zwd-lJ-YQg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="blj-zb-7A7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Comments" id="vrr-Yr-tqS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LbC-LV-l2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2077" y="2107"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="huF-7O-OVB">
+            <objects>
+                <viewController id="WF9-ED-uW8" customClass="EventDetailViewController" customModule="joind_in" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HpP-R2-yAT"/>
+                        <viewControllerLayoutGuide type="bottom" id="cvQ-VX-fEo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vSB-78-Fos">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Details" id="ypX-nc-6IF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6mo-4e-ow7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2077" y="797"/>
+        </scene>
+        <!--Event Detail View Tab Bar Controller-->
+        <scene sceneID="Imm-eh-idm">
+            <objects>
+                <tabBarController id="L8B-BG-DYZ" customClass="EventDetailViewTabBarController" customModule="joind_in" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="gL6-KH-Wpj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="WF9-ED-uW8" kind="relationship" relationship="viewControllers" id="aIW-SE-fPe"/>
+                        <segue destination="7hp-sm-i3Y" kind="relationship" relationship="viewControllers" id="IqM-Kc-fA3"/>
+                        <segue destination="qq7-Y1-UhI" kind="relationship" relationship="viewControllers" id="KTZ-nC-73W"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bsm-9w-P5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1257" y="1128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M9t-3I-xvf">
